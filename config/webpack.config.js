@@ -417,6 +417,8 @@ module.exports = function(webpackEnv) {
             // By default we support CSS Modules with the extension .module.css
             {
               test: cssRegex,
+              modules: true,
+              localIdentName: '[name]_[local]_[hash:base64:5]',
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,

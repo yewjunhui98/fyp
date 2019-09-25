@@ -1,0 +1,26 @@
+a {
+    color: l#40A4C8;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+a:visited
+{
+    color: purple;
+}
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link > div{
+    margin: 0 10px;
+}
+
+p{
+    font-size: 12px;
+    margin: 0 0;
+    font-family: "Quicksand";
+}

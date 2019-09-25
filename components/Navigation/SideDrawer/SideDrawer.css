@@ -1,0 +1,42 @@
+.SideDrawer {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: white;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.25s ease-out;
+}
+
+.Banner {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #084C9E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+
+.Open{
+    transform: translateX(0);
+}
+
+.Close{
+    transform: translateX(-100%);
+}
+
+.Logo{
+    height: 11%;
+    margin-bottom: 32px;
+    margin-top:-10px;
+}

@@ -1,0 +1,29 @@
+.Banner{
+    position: fixed;
+    height: 56px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #084C9E;
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.Banner nav{
+    height: 100%;
+}
+
+.Logo{
+    height: 80%;
+}
+
+@media(max-width: 499px){
+    .DesktopOnly{
+        display: none;
+    }
+}

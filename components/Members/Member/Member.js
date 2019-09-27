@@ -28,7 +28,6 @@ class Member extends Component {
                         {displayposition}
                     </div>
                 </div>
-                
             </div>
         );
     }

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import icon from '../../../assets/images/icon.png';
 import classes from './Member.css';
 
-
 class Member extends Component {
     render(){
         let displayposition;
@@ -13,19 +12,24 @@ class Member extends Component {
         else{
             displayposition= null;
         }
-
         return(
-            <div className={classes.link}>
-            <div>
-                <img src={icon} alt="ProfileIcon" height="30px" />
+            <div className={classes.fixedDiv}>
+                <div className = {this.props.fade? classes.fade:classes.pHide}>
+                </div>
+                <div className={classes.link}>
+                    
+                    <div>
+                        <img src={icon} alt="ProfileIcon" height="30px" />
+                    </div>
+                    <div>
+                        <a href="/">
+                            {this.props.name} 
+                        </a>
+                        {displayposition}
+                    </div>
+                </div>
+                
             </div>
-            <div>
-                <a href="/">
-                    {this.props.name} 
-                </a>
-                {displayposition}
-            </div>
-        </div>
         );
     }
 }

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import icon from '../../../assets/images/icon.png';
 import classes from './Member.css';
+import {Route, Router} from 'react-router-dom';
+import ProfilePage from '../../../containers/ProfilePage/ProfilePage';
 
 class Member extends Component {
     render(){
@@ -22,9 +25,9 @@ class Member extends Component {
                         <img src={icon} alt="ProfileIcon" height="30px" />
                     </div>
                     <div>
-                        <a href="/">
+                        <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
                             {this.props.name} 
-                        </a>
+                        </Link>
                         {displayposition}
                     </div>
                 </div>

@@ -13,9 +13,9 @@ class MemberPage extends Component {
     render() {
         return(
             <Aux>
-                <Members type="Mentee" />
+                <Members type="Mentee"/>
                 <br />
-                <Members type="Mentor" />
+                <Members type="Mentor"/>
             </Aux>
         );
     }

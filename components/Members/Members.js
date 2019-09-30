@@ -1,14 +1,29 @@
 import React, {Component} from 'react';
 import classes from './Members.css';
 import Member from '../../components/Members/Member/Member';
+import Modal from '../../components/UI/Modal/Modal';
+import AddMembers from '../../components/Members/AddMembers/AddMembers';
 
 class members extends Component {
 
   state = {
-  people : [],
-  showMoreEnabled : false,
-  lessThanEqualsThree : false
+    people : [],
+    showMoreEnabled : false,
+    lessThanEqualsThree : false,
+    showAddMembers : false
   }
+
+  enableShowAddMembersFunction = () =>{
+    this.setState(prevState => ({ 
+        showAddMembers: true,
+      }))
+}
+
+cancelShowAddMembersFunction = () =>{
+    this.setState(prevState => ({ 
+        showAddMembers: false
+      }))
+}
 
   checkMentorOrMentee(mentor, mentee){
     const mentorArray = [
@@ -110,17 +125,21 @@ class members extends Component {
 
     return (
       <div className={classes.header} > 
+      <Modal show={this.state.showAddMembers} modalClosed={this.cancelShowAddMembersFunction}>
+       {/* Add the component here */}
+        < AddMembers type = {this.props.type}/>
+      </Modal>
         <div className={classes.Member}>
           {this.props.type} ({this.state.people.length})
 
-          <div className = {classes.addMore}> Add</div>
+          <div className = {classes.addMore} onClick={this.enableShowAddMembersFunction}> Add</div>
           <div onClick={this.changeEnableShowMore} 
           className ={!this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.pHide}>Hide</div>
         </div>
         <div className={classes.list}>
             {mappedMembers}
             <div className={this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.showMoreButton}
-            onClick={this.changeEnableShowMore}>
+            onClick={this.changeEnableShowMore} >
               <p>See more members</p>
             </div>
         </div>

@@ -1,6 +1,6 @@
 .SideDrawer {
     position: fixed;
-    width: 90%;
+    width: 85%;
     height: 100%;
     left: 0;
     top: 0;
@@ -25,7 +25,18 @@
     box-sizing: border-box;
     z-index: 90;
 }
+.siteNav span{
+    display:block;
+    text-align: left;
+    padding: 5px 0px;
+}
+.siteNav span:hover{
+    background-color: #83a5ce;
+}
 
+.slink, .slink:visited{
+    color: #0645AD;
+}
 
 .Open{
     transform: translateX(0);

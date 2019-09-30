@@ -21,24 +21,35 @@
 
 .showMoreButton{
     height: 20px;
-    /* width: 65%; */
-
-    border-top: 1px solid grey;
-
-    background-color: lightblue;
-    padding-top: 2%;
-    /* padding-bottom: 1%; */
-    /* padding-left: 35%; */
+    width: 100%;
     text-align: center;
-
+    border-top: 1px solid grey;
+    color: #084C9E;
+    padding: 6px 0px;
+    font-size: 14px;
+}
+.showMoreButton:hover{
+    color:#83a5ce;
+    cursor: pointer;
 }
 
 .pHide{
     padding-right: 2%;
     float: right;
+    color: #084C9E;
+}
+.pHide:hover{
+    color:#83a5ce;
+    cursor: pointer;
 }
 
 .addMore{
     padding-right: 2%;
     float: right;
+    color: #084C9E;
+}
+
+.addMore:hover{
+    color:#83a5ce;
+    cursor: pointer;
 }

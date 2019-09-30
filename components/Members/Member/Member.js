@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import icon from '../../../assets/images/icon.png';
 import classes from './Member.css';
-import {Route, Router} from 'react-router-dom';
-import ProfilePage from '../../../containers/ProfilePage/ProfilePage';
-
 class Member extends Component {
     render(){
         let displayposition;

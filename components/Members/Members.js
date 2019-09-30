@@ -121,7 +121,7 @@ class members extends Component {
             {mappedMembers}
             <div className={this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.showMoreButton}
             onClick={this.changeEnableShowMore}>
-              <p>See more members</p>
+              See more members
             </div>
         </div>
         

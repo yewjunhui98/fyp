@@ -8,6 +8,15 @@
     text-align: center;
 }
 
-h3{
+.picture img {
+    height: 100px;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.header h4{
     color: grey;
+    margin: 0 0 15px;
 }

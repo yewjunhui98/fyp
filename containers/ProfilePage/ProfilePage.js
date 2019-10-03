@@ -7,28 +7,15 @@ import queryString from 'query-string';
 class ProfilePage extends Component {
 
     state = {
-        name: null
+        name: null,
+        expertise: null,
+        experience: null
       }
       componentDidMount(){
-        // // const {handle} = this.props.match.params;
-        // const { name } = this.props.location.state;
-      
-        // console.log(name);
-        // const query = new URLSearchParams(this.props.location.search);
-        // console.log("Query: " + query);
-        // for(let param of query.enteries())
-        // {
-        //   if(param[0] === 'name')
-        //   {
-        //     this.setState(prevState => ({
-        //       name: param[1]
-        //     }))
-        //   }
-        // }
-
         const values = queryString.parse(this.props.location.search)
         this.setState(prevState => ({
-                  name: values.name
+                  name: values.name,
+                  expertise: values.expertise
                 }))
       }
     render() {
@@ -36,7 +23,7 @@ class ProfilePage extends Component {
             <Aux>
                 <Profile name = {this.state.name}></Profile>
                 <br/>
-                <ProfileDetail></ProfileDetail>
+                <ProfileDetail expertise = {this.state.expertise} experience = {this.state.experience}></ProfileDetail>
             </Aux>
         );
     }

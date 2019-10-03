@@ -1,0 +1,9 @@
+.expertise{
+    border: solid 1px grey;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    margin: 0 5px 10px;
+    text-align: center;
+    width: auto;
+    float: left;
+}

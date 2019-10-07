@@ -1,0 +1,38 @@
+.header {
+    border: 1px solid grey;
+    padding: 0;
+    margin: 0px 10px 10px;
+    overflow: auto;
+}
+
+.header h4{
+    margin: 0;
+}
+
+.title img{
+    float: right;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    width: 20px;
+    height: 20px;
+}
+
+.body img{
+    float: left;
+    height: 50px;
+    width: 50px;
+    margin-left: 2%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+}
+
+.body p{
+    font-size: 10pt;
+}
+
+.body h2{
+    float: right;
+    margin-top: 0;
+    margin-right: 5%;
+}

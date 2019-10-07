@@ -20,13 +20,14 @@ class Layout extends Component{
     render(){
         return(
             <Aux>
-                <TopBanner/>
-                <NavBar drawerToggleClicked={this.sideDrawerToggleHandler}/>
+                <TopBanner/>                
                 <SideDrawer open={this.state.showSideDrawer} 
                 closed={this.sideDrawerClosedHandler}/>
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
+                <div className={classes.FixNav}></div>
+                <NavBar drawerToggleClicked={this.sideDrawerToggleHandler}/>
             </Aux>
         )
     }

@@ -5,11 +5,11 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 
 const toolbar = (props) => (
-    <header className={classes.NavBar}>        
+    <footer className={classes.NavBar}>        
         <nav className={classes.navItems}>        
             <NavigationItems drawerToggleClicked = {props.drawerToggleClicked}/>            
         </nav>
-    </header>
+    </footer>
 );
 
 export default toolbar;

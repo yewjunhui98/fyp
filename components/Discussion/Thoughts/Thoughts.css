@@ -1,0 +1,22 @@
+.header {
+    border: 1px solid grey;
+    padding: 0;
+    margin: 0px 10px 10px;
+    overflow: auto;
+}
+
+.header img{
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin: 2% 0% 2% 2%;
+}
+
+.input h4{
+    display:block;
+    margin: 3% 0% 1% 15%; 
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+    color: grey;
+}

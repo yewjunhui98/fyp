@@ -24,6 +24,7 @@
 
 .coverpic img{
     float: right;
+    padding-right: 3%;
     width: 25px;
     height: 25px;
 }

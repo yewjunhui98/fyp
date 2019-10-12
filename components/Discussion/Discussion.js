@@ -4,15 +4,14 @@ import profileIcon from '../../assets/images/person-icon.png';
 import etcIcon from '../../assets/images/etc.png';
 import notLikedIcon from '../../assets/images/unliked.png';
 import LikedIcon from '../../assets/images/liked.png';
-import commentIcon from '../../assets/images/comment.png';
 import shareIcon from '../../assets/images/share.png';
 import {Link} from 'react-router-dom';
-import BottomDrawer from '../Navigation/BottomDrawer/BottomDrawer';
-import bottomDrawerToggle from '../Navigation/BottomDrawer/BottomDrawerToggle/BottomDrawerToggle';
+import CommentsDrawer from '../Navigation/CommentsDrawer/CommentsDrawer';
+import CommentBar from '../Navigation/CommentBar/CommentBar';
 
 class discussion extends Component{
     state = {
-        showBottomDrawer: false
+        showCommentsDrawer: false
     }
     handleLikeChange = () =>{
         if(document.getElementById("changeHeart").src === LikedIcon)
@@ -26,17 +25,17 @@ class discussion extends Component{
             this.props.onLikeChange(this.props.likes+1);
         }
     }
-    handleCommentChange = () =>{
-        this.props.onCommentChange(this.props.noofcomments+1);
+
+    commentsDrawerClosedHandler = () => {
+        this.setState({showCommmentsDrawer: false});
     }
-    bottomDrawerClosedHandler = () =>{
-        this.setState({showBottomDrawer: false});
+
+    commentsDrawerToggleHandler = () => {
+        this.setState((prevstate) => {
+            return {showCommentsDrawer: !prevstate.showCommentsDrawer}
+        });
     }
     render(){
-        function showComments()
-        {
-            console.log("asdf");
-        }
         let liked;
         if(this.props.liked === true)
         {
@@ -67,9 +66,10 @@ class discussion extends Component{
                         </div>
                     </div>
                     <div className={classes.column}>
-                        <div className={classes.comment} onClick={showComments}>
-                            <img src={commentIcon} alt="commenticon"/>
-                            {this.props.noofcomments} comments
+                        <div className={classes.comment}>
+                            <CommentBar commentsDrawerToggleClicked ={this.commentsDrawerToggleHandler} noofcomments = {this.props.comments.length}/>
+                         <CommentsDrawer open={this.state.showCommentsDrawer}
+                            closed={this.commentsDrawerClosedHandler} comments={this.props.comments} name={this.props.name}/>
                         </div>
                     </div>
                     <div className={classes.column}>
@@ -78,7 +78,9 @@ class discussion extends Component{
                         </div>
                     </div>
                 </div>
+                <div className={classes.selfcomment}>
                 <h4>Comments:</h4>
+                </div>
             </div>
         );
     }

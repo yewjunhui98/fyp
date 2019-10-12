@@ -9,6 +9,11 @@
     margin: 0;
 }
 
+.title h4{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
 .title img{
     float: right;
     margin-top: 1%;
@@ -35,4 +40,8 @@
     float: right;
     margin-top: 0;
     margin-right: 5%;
+}
+
+hr{
+    margin-top: 3%;
 }

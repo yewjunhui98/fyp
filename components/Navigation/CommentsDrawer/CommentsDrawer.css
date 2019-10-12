@@ -1,0 +1,19 @@
+.CommentsDrawer {
+    position: fixed;
+    width: 100%;
+    height: 95%;
+    left: 0;
+    top: 50px;
+    z-index: 200;
+    background-color: white;
+    box-sizing: border-box;
+    transition: transform 0.25s ease-out;
+}
+
+.Open{
+    transform: translateY(0);
+}
+
+.Close{
+    transform: translateY(100%);
+}

@@ -1,9 +1,12 @@
 .comments{
-    border: solid 1px grey;
-    background-color: #d3d3d3;
-    border-radius: 5px;
-    margin: 0 5px 10px;
-    text-align: center;
-    width: auto;
-    float: left;
+    display: block;
+	position: relative;
+	background: #f3f3f3;
+    border-radius: .4em;
+    margin-bottom: 5%;
+}
+
+.header img{
+    width: 10%;
+    height: 10%;
 }

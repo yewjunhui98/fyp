@@ -67,11 +67,12 @@
     width: 20px;
 }
 
-.header h4{
+.selfcomment h4{
     display:block;
-    margin: 3% 0% 1% 5%; 
+    margin: 0% 0% 3% 5%; 
     border: 1px solid black;
     width: 90%;
     border-radius: 5px;
     color: grey;
 }
+

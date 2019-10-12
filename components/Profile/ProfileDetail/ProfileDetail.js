@@ -16,7 +16,7 @@ class profiledetail extends Component {
                 <div className={classes.header}>
                     <h2>About Me</h2>
                     <hr/>
-                    <p>my name is dick</p>
+                    <p>In west Philadelphia born and raised.</p>
                     <br/>
                 </div>
                 <div className={classes.header}>

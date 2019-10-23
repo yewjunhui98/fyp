@@ -1,85 +1,120 @@
 import React, {Component} from 'react';
 import classes from './Discussion.css';
 import profileIcon from '../../assets/images/person-icon.png';
-import etcIcon from '../../assets/images/etc.png';
 import notLikedIcon from '../../assets/images/unliked.png';
 import LikedIcon from '../../assets/images/liked.png';
 import shareIcon from '../../assets/images/share.png';
 import {Link} from 'react-router-dom';
 import CommentsDrawer from '../Navigation/CommentsDrawer/CommentsDrawer';
 import CommentBar from '../Navigation/CommentBar/CommentBar';
+import WriteCommentBar from '../Navigation/WriteCommentBar/WriteCommentBar';
+import ETC from '../Discussion/ETC/ETC';
 
 class discussion extends Component{
     state = {
-        showCommentsDrawer: false
+        name: "James",
+        showCommentsDrawer: false,
+        likes: this.props.likes,
+        noofcomments: this.props.noofcomments,
+        heartIcon: this.props.heartIcon,
+        comments: [],
+        pin: false,
+        deleted: false,
+        id: this.props.id
     }
+
     handleLikeChange = () =>{
-        if(document.getElementById("changeHeart").src === LikedIcon)
+        if(this.state.heartIcon === LikedIcon)
         {
-            document.getElementById("changeHeart").src = notLikedIcon;
-            this.props.onLikeChange(this.props.likes-1);
+            this.setState({heartIcon: notLikedIcon});
+            if(this.state.likes>0)
+                this.setState({likes: this.state.likes-1});
         }
         else
         {
-            document.getElementById("changeHeart").src = LikedIcon;
-            this.props.onLikeChange(this.props.likes+1);
+            this.setState({heartIcon: LikedIcon});
+            this.setState({likes: this.state.likes+1});
         }
     }
 
     commentsDrawerClosedHandler = () => {
-        this.setState({showCommmentsDrawer: false});
+        this.setState({showCommentsDrawer: false});
     }
 
     commentsDrawerToggleHandler = () => {
         this.setState((prevstate) => {
-            return {showCommentsDrawer: !prevstate.showCommentsDrawer}
+             return {showCommentsDrawer: !prevstate.showCommentsDrawer}
         });
     }
-    render(){
-        let liked;
-        if(this.props.liked === true)
+    myCallback = (comments, noofcomments) =>{
+        this.setState({
+            comments: comments,
+            noofcomments: noofcomments
+        })
+    }
+    pinCallback = (pin)=>{
+        this.setState({
+            pin: pin
+        })
+    }
+    deleteCallback=(deleted)=>{
+        this.setState({
+            deleted: deleted
+        }, ()=>this.props.deleted(this.state.id))
+    }
+    checkIfDeleted=()=>
+    {
+        if(this.state.deleted===true)
         {
-            liked = LikedIcon;
+            this.props.deleted(this.state.id)
         }
-        else{
-            liked = notLikedIcon;
-        }
+    }
+    render(){
         return(
-            <div className={classes.header}>
-                <img src={profileIcon} alt="profileicon" className={classes.profile}/>
-                <img src={etcIcon} alt="etcicon" className={classes.etc}/>
-                <div className={classes.profileheader}>
-                <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
-                           <strong>{this.props.name}</strong>
-                        </Link>
-                    <br/>
-                    {this.props.date}
+            <div id={this.state.id}>
+                <div className={classes.header}>
+                    <img src={profileIcon} alt="profileicon" className={classes.profile}/>
+                    <ETC id={this.state.id} pin={this.pinCallback} deleted={this.deleteCallback}/>
+                    <div className={classes.profileheader}>
+                    <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
+                            <strong>{this.props.name}</strong>
+                            </Link>
+                        <br/>
+                        <div className={classes.date}>
+                            {this.props.date}
+                        </div>
+                    </div>
                     <div className={classes.post}>
                         {this.props.post}
                     </div>
-                </div>
-                <div className={classes.row}>
-                    <div className={classes.column}>
-                        <div className={classes.heart}>
-                            <img src={liked} id="changeHeart" alt="hearticon" onClick={this.handleLikeChange}/>
-                            {this.props.likes} likes
+                    <div className={classes.row}>
+                        <div className={classes.column}>
+                            <div className={classes.heart}>
+                                <img src={this.state.heartIcon} id="changeHeart" alt="hearticon" onClick={this.handleLikeChange}/>
+                                {this.state.likes} likes
+                            </div>
+                        </div>
+                        <div className={classes.column}>
+                            <div className={classes.comment}>
+                                <CommentBar commentsDrawerToggleClicked={this.commentsDrawerToggleHandler} 
+                                noofcomments={this.state.noofcomments}/>
+                                <CommentsDrawer open={this.state.showCommentsDrawer} 
+                                closed={this.commentsDrawerClosedHandler} 
+                                comments={this.myCallback} 
+                                name={this.state.name}/>
+                            </div>
+                        </div>
+                        <div className={classes.column}>
+                            <div className={classes.share}>
+                                <img src={shareIcon} alt="shareicon"/>
+                            </div>
                         </div>
                     </div>
-                    <div className={classes.column}>
-                        <div className={classes.comment}>
-                            <CommentBar commentsDrawerToggleClicked ={this.commentsDrawerToggleHandler} noofcomments = {this.props.comments.length}/>
-                         <CommentsDrawer open={this.state.showCommentsDrawer}
-                            closed={this.commentsDrawerClosedHandler} comments={this.props.comments} name={this.props.name}/>
-                        </div>
-                    </div>
-                    <div className={classes.column}>
-                        <div className={classes.share}>
-                            <img src={shareIcon} alt="shareicon"/>
-                        </div>
-                    </div>
-                </div>
-                <div className={classes.selfcomment}>
-                <h4>Comments:</h4>
+                    <WriteCommentBar writeCommentDrawerToggleClicked={this.commentsDrawerToggleHandler}/>
+                    <CommentsDrawer open={this.state.showCommentsDrawer} 
+                                closed={this.commentsDrawerClosedHandler} 
+                                comments={this.myCallback} 
+                                name={this.state.name}/>
                 </div>
             </div>
         );

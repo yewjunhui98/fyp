@@ -2,6 +2,7 @@
     border: 1px solid grey;
     padding: 0;
     margin: 0px 10px 10px;
+    z-index: -1;
 }
 
 .header img{
@@ -9,22 +10,34 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
+    height: 125px;
+    width: 100%;
 }
 
-.coverpic {
-    font-size: 10pt;
-    margin-left: 60%;
+.coverpic{
+    height : 25px;
+    width: 6%;
+    position: absolute;
+    margin-left: 85%;
     margin-right: 5%;
     margin-top: 2%;
-    border: solid 2px black;
     overflow: auto;
     padding: 0 0 0 5px;
+    transition: all .5s linear;
+    background : rgba(255, 255, 255, 0.5);
 }
 
-.coverpic img{
+.coverpic p{
+    font-size: 12pt;
+    color: rgba(0, 0, 255, 0);
+}
+
+.image img{
     float: right;
-    padding-right: 3%;
     width: 25px;
     height: 25px;
+}
+
+.image a{
+    pointer-events: none;
 }

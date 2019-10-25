@@ -5,6 +5,8 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import {Link} from 'react-router-dom';
 
 import closeIcon from '../../../assets/images/close.png';
+import shareIcon from '../../../assets/images/share.png';
+import commentIcon from '../../../assets/images/comment.png';
 
 
 class postDrawer extends Component{
@@ -22,27 +24,42 @@ class postDrawer extends Component{
                     <div>
                         <img src={closeIcon} alt="closeicon" onClick={this.props.closed} className={classes.backIcon}/>
                     </div>
-                    <div className={classes.profileheader}>
-                        <span>Posted by </span>
-                        <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}} className={classes.userName}>
-                                <strong>{this.props.name}</strong>
-                        </Link>
-                        &nbsp;&nbsp;&nbsp;
-                        <span className={classes.date}>
-                            {this.props.date}
-                        </span> 
-                    </div>     
-                    <div className={classes.title}>
-                        {this.props.title}
+                    <div className={classes.fullPost}>
+                        <div className={classes.profileheader}>
+                            <span>Posted by </span>
+                            <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}} className={classes.userName}>
+                                    <strong>{this.props.name}</strong>
+                            </Link>
+                            &nbsp;&nbsp;&nbsp;
+                            <span className={classes.date}>
+                                {this.props.date}
+                            </span> 
+                        </div>     
+                        <div className={classes.title}>
+                            {this.props.title}
+                        </div>
+                                    
+                        <div className={classes.post}>
+                            {this.props.post}
+                        </div>
+                        
+                        <div className={classes.tags}>
+                            {this.props.tags}
+                        </div>
+                        <div className={classes.row}>
+                        <div className={classes.column}>
+                            <div className={classes.comment}>
+                                <img src={commentIcon} alt="commentIcon"/>                                
+                            </div>
+                        </div>
+                        <div className={classes.column}>
+                            <div className={classes.share}>
+                                <img src={shareIcon} alt="shareicon"/>
+                            </div>
+                        </div>
                     </div>
-                                   
-                    <div className={classes.post}>
-                        {this.props.post}
                     </div>
-                    <div className={classes.tags}>
-                        {this.props.tags}
-                    </div>
-                  
+                                      
                 </div>
             </Aux>
         )

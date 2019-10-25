@@ -21,6 +21,10 @@ class postDrawer extends Component{
                     <div>
                         <img src={BackIcon} alt="backicon" onClick={this.props.closedAdd} className={classes.backIcon}/>
                     </div>
+                    <br/>
+                    <div>
+                        <h1>Add Post</h1>
+                    </div>
                   
                 </div>
             </Aux>

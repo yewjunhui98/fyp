@@ -70,8 +70,8 @@ class ForumPage extends Component {
                    
                 <h2>&nbsp;Forum Posts</h2>
                 {mappedPosts}
-                <Post name={"user1"} date={this.state.date} title={"Question Title"}post={["content of post..."]} tags={["Test"]} liked={false} likes={0} comments={[]} noofcomments={0} id={121}/>
-                <Post name={"user2"} date={this.state.date} title={"QTitle 2"}post={["...content....."]} liked={false} likes={0} comments={[]} noofcomments={0} id={321}/>
+                <Post name={"user1"} date={this.state.date} title={"Question Title"}post={["content of post..."]} tags={["tag1"]} liked={false} likes={0} comments={[]} noofcomments={0} id={121}/>
+                <Post name={"user2"} date={this.state.date} title={"QTitle 2"}post={["...content....."]} tags={["anothertag"]} liked={false} likes={0} comments={[]} noofcomments={0} id={321}/>
                 <br/>
             </Aux>
         );

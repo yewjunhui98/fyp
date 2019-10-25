@@ -44,10 +44,10 @@ class Post extends Component{
                         </span>
                         <ETC id={this.state.id} pin={this.pinCallback} deleted={this.deleteCallback}/> 
                     </div>
-                    <div className={classes.title}>
+                    <div className={classes.title} onClick={this.postToggleHandler}>
                         {this.props.title}
                     </div>
-                    <div className={classes.post}>
+                    <div className={classes.post} onClick={this.postToggleHandler}>
                         {this.props.post}
                     </div>
                     <div className={classes.tags}>

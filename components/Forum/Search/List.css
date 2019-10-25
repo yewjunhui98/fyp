@@ -1,0 +1,41 @@
+.searchBlock img{
+    display: block;
+    float: left;
+    padding: 5px;
+    padding-top: 10px;
+    width: 20px;
+}
+.searchBlock input{
+    margin-top: 10px;
+    padding: 7px 0px 7px 10px;
+    width: 80%;
+    background-color: #e4e4e4;
+    border: none;    
+}
+.searchBlock hr{
+    margin-top: 10px;
+}
+.searchBlock span{
+    color:#0645AD;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 0;
+}
+.searchBlock ul{
+    margin-top: -9px;
+}
+
+.searchList{
+    list-style-type: none;    
+}
+.searchList div {
+    padding: 5px 0px 8px 45px;
+    display: block;
+    margin: -1px -1px -1px -40px;    
+    width: 120%;
+    cursor: pointer;
+}
+.searchList div:hover{
+    background-color: lightgrey;
+}
+

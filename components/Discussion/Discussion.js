@@ -20,7 +20,8 @@ class discussion extends Component{
         comments: [],
         pin: false,
         deleted: false,
-        id: this.props.id
+        id: this.props.id,
+        edit: null
     }
 
     handleLikeChange = () =>{
@@ -52,29 +53,28 @@ class discussion extends Component{
             noofcomments: noofcomments
         })
     }
-    pinCallback = (pin)=>{
+    deleteCallback=(id)=>{
         this.setState({
-            pin: pin
-        })
-    }
-    deleteCallback=(deleted)=>{
-        this.setState({
-            deleted: deleted
+            id: id
         }, ()=>this.props.deleted(this.state.id))
     }
-    checkIfDeleted=()=>
-    {
-        if(this.state.deleted===true)
-        {
-            this.props.deleted(this.state.id)
-        }
+    pinnedCallback=(id)=>{
+        this.setState({
+            id: id
+        }, ()=>this.props.pinned(this.state.id))
+    }
+    editCallback=(edit)=>{
+        console.log(edit)
+        this.setState({
+            edit: edit
+        }, ()=>this.props.edit(this.state.edit, this.state.id))
     }
     render(){
         return(
             <div id={this.state.id}>
-                <div className={classes.header}>
+                <div className={classes.header} onClick={this.changePin}>
                     <img src={profileIcon} alt="profileicon" className={classes.profile}/>
-                    <ETC id={this.state.id} pin={this.pinCallback} deleted={this.deleteCallback}/>
+                    <ETC id={this.state.id} pin={this.pinnedCallback} deleted={this.deleteCallback} post={this.props.post} edit={this.editCallback}/>
                     <div className={classes.profileheader}>
                     <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
                             <strong>{this.props.name}</strong>

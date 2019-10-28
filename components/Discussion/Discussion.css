@@ -66,8 +66,10 @@
 }
 
 .post{
-    margin-top: 2%;
+    margin-top: 10%;
     margin-left: 5%;
+    margin-bottom: 5%;
+    font-size: 12pt;
 }
 
 .heart{

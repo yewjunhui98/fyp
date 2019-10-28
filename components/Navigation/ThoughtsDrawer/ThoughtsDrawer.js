@@ -15,13 +15,9 @@ class ThoughtsDrawer extends Component{
     postThoughts = () =>{
         if(document.getElementById("thoughtstext").value === "")
             return;
-            this.setState({post: document.getElementById("thoughtstext").value}, ()=>this.someFn())
-        /*if(this.state.post.length===0){
-            this.setState({post: [document.getElementById("thoughtstext").value]}, () => {this.someFn()})
-        }
         else{
-            this.setState({post: [...this.state.post, document.getElementById("thoughtstext").value]}, ()=>{this.someFn()})
-        }*/
+            this.setState({post: document.getElementById("thoughtstext").value}, ()=>this.someFn())
+        }
         document.getElementById("thoughtstext").value = null;
     }
 
@@ -43,7 +39,6 @@ class ThoughtsDrawer extends Component{
                     <textarea id="thoughtstext" placeholder="Share your thoughts here..."/>
                     <div onClick={this.props.closed}>
                         <h3 onClick={this.postThoughts}>Post</h3>
-                        <div onClick={this.someFn}/>
                     </div>
                     <div className={classes.attach}>
                         <img src={AttachIcon} alt="attach"/>

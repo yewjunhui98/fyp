@@ -9,12 +9,13 @@ const options = {
     month:"long",
     day:"numeric"}
 
+//ENTER CURRENT USER TO THIS STATE
 class thoughts extends Component{
     state ={
         showThoughtsDrawer: false,
         name: "James",
         date: new Date().toLocaleDateString("en-GB", options),
-        post: "", 
+        post: null, 
         liked: false, 
         likes: 0, 
         comments: [], 
@@ -22,13 +23,7 @@ class thoughts extends Component{
 
     }
     myCallback = (post) =>{
-        this.setState({name: this.state.name, 
-            date: this.state.date, 
-            post: post, 
-            liked: false, 
-            likes: 0, 
-            comments: [], 
-            noofcomments: 0}, ()=>{this.someFn()});
+        this.setState({post: post}, ()=>{this.someFn()});
     }
 
     someFn = () =>{

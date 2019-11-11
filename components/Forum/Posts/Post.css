@@ -1,0 +1,108 @@
+.postContainer{
+    height: 240px;
+    margin-bottom: 15px;    
+}
+
+.header {
+    border: 1px solid grey;
+    padding-left: 8px;
+    float: left;
+    height: 235px;
+    width: 77%;
+    padding-bottom: 5px;
+}
+
+.votes{
+    border: 1px solid grey;
+    float: left; 
+    height: 240px;
+    margin-right: -1px;
+    margin-left: 10px;
+    width: 15%;
+    text-align: center;
+}
+
+.votes img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+
+.votes div{
+    height: 28%;
+    margin: 10px 0px;
+}
+
+.profileheader{
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 10%;
+}
+.profileheader span{
+    font-size: 9pt;
+}
+.userName{
+    font-size: 9pt;
+}
+.date{
+    font-size: 8pt;
+}
+
+.column{
+    float: left;
+    width: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.row{
+    padding-top: 10px;
+    height: 37%;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    height: 30%;
+    padding: 1px;
+}
+.post{
+    margin-top: 2%;
+    margin-left: 5%;
+    height: 15%;
+    padding: 1px;
+}
+/*
+.tags{
+    font-size: 8pt;
+    display: inline-block;
+    border: 1px solid #83a5ce;
+    background-color: #0645AD;
+    color: white;
+    padding: 6px 7px;
+    border-radius: 15px;
+    height: 8%;
+}
+*/
+
+.comment{
+    font-size: 10pt;
+}
+
+.comment img{
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+.selfcomment h4{
+    display:block;
+    margin: 0% 0% 3% 5%; 
+    border: 1px solid black;
+    width: 90%;
+    border-radius: 5px;
+    color: grey;
+}
+

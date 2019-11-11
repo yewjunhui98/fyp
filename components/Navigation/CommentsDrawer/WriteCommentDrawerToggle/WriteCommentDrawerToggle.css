@@ -1,0 +1,8 @@
+.selfcomment h4{
+    display:block;
+    margin: 0% 0% 3% 5%; 
+    border: 1px solid black;
+    width: 90%;
+    border-radius: 5px;
+    color: grey;
+}

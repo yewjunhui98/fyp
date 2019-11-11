@@ -1,0 +1,30 @@
+.btnSearch{
+    float: right;
+    margin-right: 10px;
+    border: 1px solid #83a5ce;
+    background-color: #0645AD;
+    color: white;
+    padding: 6px 7px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btnSearch:hover, .btnAsk:hover{
+    background-color: #83a5ce;
+}
+
+.btnAsk{
+    float: right;
+    margin-right: 10px;
+    border: 1px solid #83a5ce;
+    background-color: #0645AD;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    font-size: 28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 25px;
+}

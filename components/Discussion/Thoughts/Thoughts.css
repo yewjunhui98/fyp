@@ -1,0 +1,13 @@
+.header {
+    border: 1px solid grey;
+    padding: 0;
+    margin: 0px 10px 10px;
+    overflow: auto;
+}
+
+.header img{
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin: 2% 0% 2% 2%;
+}

@@ -1,0 +1,84 @@
+.PostDrawer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background-color: white;
+    box-sizing: border-box;
+    transition: transform 0.25s ease-out;
+}
+.Open{
+    transform: translateY(0);
+}
+.Close{
+    transform: translateY(150%);
+}
+
+.backIcon{
+    display: block;
+    float: right;
+    padding: 5px;
+    padding-top: 10px;
+    width: 20px;
+}
+
+.fullPost{
+    margin: 40px 20px;
+    padding: 0 10px;
+    border: 1px solid grey;
+}
+
+.profileheader span{
+    font-size: 9pt;
+}
+.userName{
+    font-size: 9pt;
+}
+.date{
+    font-size: 8pt;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.post{
+    margin-top: 2%;
+    margin-left: 5%;
+    height: 80px;
+}
+/*
+.tags{
+    font-size: 8pt;
+    display: inline-block;
+    border: 1px solid #83a5ce;
+    background-color: #0645AD;
+    color: white;
+    padding: 6px 7px;
+    border-radius: 15px;
+}
+*/
+
+.column{
+    float: left;
+    width: auto;
+    padding: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.commentSec{
+    margin: 40px 20px;
+    padding: 10px 10px;
+    border: 1px solid grey;
+    height: 300px;
+}

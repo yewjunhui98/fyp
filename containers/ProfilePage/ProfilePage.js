@@ -7,15 +7,12 @@ import queryString from 'query-string';
 class ProfilePage extends Component {
 
     state = {
-        name: null,
-        expertise: null,
-        experience: null
+        name: null
       }
       componentDidMount(){
         const values = queryString.parse(this.props.location.search)
         this.setState(prevState => ({
-                  name: values.name,
-                  expertise: values.expertise
+                  name: values.name
                 }))
       }
     render() {
@@ -23,7 +20,7 @@ class ProfilePage extends Component {
             <Aux>
                 <Profile name = {this.state.name}></Profile>
                 <br/>
-                <ProfileDetail expertise = {this.state.expertise} experience = {this.state.experience}></ProfileDetail>
+                <ProfileDetail></ProfileDetail>
             </Aux>
         );
     }

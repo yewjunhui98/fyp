@@ -29,10 +29,10 @@
     list-style-type: none;    
 }
 .searchList div {
-    padding: 5px 0px 8px 45px;
+    padding: 5px 5px 8px 5px;
     display: block;
-    margin: -1px -1px -1px -40px;    
-    width: 120%;
+    margin-left: -30px;    
+    width: 100%;
     cursor: pointer;
 }
 .searchList div:hover{

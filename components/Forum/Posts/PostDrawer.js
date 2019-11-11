@@ -5,7 +5,6 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import {Link} from 'react-router-dom';
 
 import closeIcon from '../../../assets/images/close.png';
-import shareIcon from '../../../assets/images/share.png';
 import commentIcon from '../../../assets/images/comment.png';
 
 
@@ -44,20 +43,18 @@ class postDrawer extends Component{
                         </div>
                         
                         <div className={classes.tags}>
-                            {this.props.tags}
                         </div>
                         <div className={classes.row}>
-                        <div className={classes.column}>
-                            <div className={classes.comment}>
-                                <img src={commentIcon} alt="commentIcon"/>                                
-                            </div>
-                        </div>
-                        <div className={classes.column}>
-                            <div className={classes.share}>
-                                <img src={shareIcon} alt="shareicon"/>
+                            <div className={classes.column}>
+                                <div className={classes.comment}>
+                                    <img src={commentIcon} alt="commentIcon"/>
+                                    {this.props.noofcomments} comments                               
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className={classes.commentSec}>
+                        <span>Comments:</span>
                     </div>
                                       
                 </div>

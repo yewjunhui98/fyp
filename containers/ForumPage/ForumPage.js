@@ -15,7 +15,18 @@ class ForumPage extends Component {
     state ={
         showSearch: false,
         showAddPost: false,
-        name: "", date: new Date().toLocaleDateString("en-GB", options), title: "", post: [], tags: [], liked: false, likes: 0, comments: [], noofcomments: 0, id: 999
+
+        name: "", 
+        date: new Date().toLocaleDateString("en-GB", options), 
+        title: [], 
+        post: [], 
+        tags: [], 
+        liked: false,
+        unliked: false, 
+        likes: 0, 
+        comments: [], 
+        noofcomments: 0, 
+        id: 999
     }
     //~~~~~~Search handler~~~~~~
     searchClosedHandler = () => {
@@ -26,7 +37,7 @@ class ForumPage extends Component {
             return {showSearch: !prevState.showSearch};
         });
     }
-    //~~~~~~Search Handler~~~~~~
+    //@@@@@@Search Handler@@@@@@
 
     //~~~~~~Add Post handler~~~~~~
     addPostClosedHandler = () => {
@@ -37,10 +48,10 @@ class ForumPage extends Component {
             return {showAddPost: !prevState.showAddPost};
         });
     }
-    //~~~~~~Add Post Handler~~~~~~
+    //@@@@@@Add Post Handler@@@@@@
 
-    myCallback = (name, date, post, liked, likes, comments, noofcomments) =>{
-        this.setState({name: name, date: date, post: [...this.state.post, post], liked: liked, likes: likes, comments: comments, nofcomments: noofcomments})
+    myCallback = (name, date, title, post, liked, likes, comments, noofcomments) =>{
+        this.setState({name: name, date: date, title: [...this.state.title, title], post: [...this.state.post, post], liked: liked, likes: likes, comments: comments, nofcomments: noofcomments})
     }
 
     render() {
@@ -51,6 +62,7 @@ class ForumPage extends Component {
             }
             return <Post name={this.state.name} 
             date={this.state.date}
+            title={this.state.title[i]}
             post={value}
             liked={this.state.liked}
             likes={this.state.likes}
@@ -66,12 +78,14 @@ class ForumPage extends Component {
                 <SearchDrawer open={this.state.showSearch} closed={this.searchClosedHandler}/> 
 
                 <div onClick={this.addPostToggleHandler} className={classes.btnAsk}>+</div>
-                <AddPostDrawer openAdd={this.state.showAddPost} closedAdd={this.addPostClosedHandler}/> 
+                <AddPostDrawer openAdd={this.state.showAddPost} closedAdd={this.addPostClosedHandler}
+                name={this.myCallback}
+                /> 
                    
                 <h2>&nbsp;Forum Posts</h2>
                 {mappedPosts}
-                <Post name={"user1"} date={this.state.date} title={"Question Title"}post={["content of post..."]} tags={["tag1"]} liked={false} likes={0} comments={[]} noofcomments={0} id={121}/>
-                <Post name={"user2"} date={this.state.date} title={"QTitle 2"}post={["...content....."]} tags={["anothertag"]} liked={false} likes={0} comments={[]} noofcomments={0} id={321}/>
+                <Post name={"user1"} date={this.state.date} title={"I have some questions on Peer-to-Peer Businesses"}post={["I believe peer-to-peer business is getting popular in Malaysia..."]} tags={["tag1"]} liked={false} likes={0} comments={[]} noofcomments={0} id={121}/>
+                <Post name={"user2"} date={this.state.date} title={"What are the current popular business models to follow?"}post={["I have always been interested in the business but I have not much knowledge. Can some experts here shed some light on the topic?"]} tags={["anothertag"]} liked={false} likes={0} comments={[]} noofcomments={0} id={321}/>
                 <br/>
             </Aux>
         );

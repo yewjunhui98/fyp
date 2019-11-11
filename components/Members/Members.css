@@ -1,11 +1,11 @@
 .Member {
     border: 1px solid grey;
     margin: -1px -1px 5px 0px;
+    padding: 5px;
 }
 
 .header {
     border: 1px solid grey;
-    padding: 0;
     font-weight: bold;
     margin: 0px 10px;
 }

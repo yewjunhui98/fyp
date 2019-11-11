@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './List.css';
 import BackIcon from '../../../assets/images/back.png';
 
@@ -55,9 +55,6 @@ class List extends React.Component {
       filtered: newList
     });
   }
-
-  //Delete functionality
-  //<span className="delete" onClick={() => this.props.delete(item)}>[X]</span>    
     render() {
         return (
             <div className={classes.searchBlock}>

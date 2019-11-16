@@ -6,9 +6,11 @@ class MemberPage extends Component {
     render() {
         return(
             <Aux>
-                <Members type="Mentee"/>
+                <Members type="Mentee" adminStatus={false}/>
                 <br />
-                <Members type="Mentor"/>
+                <Members type="Mentor" adminStatus={true}/>
+                <br />
+                <Members type="Admin" adminStatus={false}/>
             </Aux>
         );
     }

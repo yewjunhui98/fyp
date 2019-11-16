@@ -25,7 +25,7 @@ cancelShowAddMembersFunction = () =>{
       }))
 }
 
-  checkMentorOrMentee(mentor, mentee){
+  checkMentorOrMentee(mentor, mentee, admin){
     const mentorArray = [
             {name: "James", position: "Driver"},
             {name: "John", position: "Toilet tech"},
@@ -41,7 +41,9 @@ cancelShowAddMembersFunction = () =>{
             {name: "Drake", position: "Lecturer"}
     ]
     
-    
+    const adminArray = [
+      {name: "Jake",position: "Page Admin"},
+]
 
     if(mentor)
     {
@@ -56,8 +58,13 @@ cancelShowAddMembersFunction = () =>{
       this.setState(prevState => ({
         people: [...newPeople]
       }))
-
-      
+    }
+    else if(admin)
+    {
+      let newPeople = adminArray.slice();
+      this.setState(prevState => ({
+        people: [...newPeople]
+      }))
     }
     
     if(this.state.people.length <= 3)
@@ -71,6 +78,7 @@ cancelShowAddMembersFunction = () =>{
   componentDidMount(){
     let mentor = false;
     let mentee = false;
+    let admin = false;
     // this.setState(prevState => ({
     //     people: []
     //   }))
@@ -85,8 +93,13 @@ cancelShowAddMembersFunction = () =>{
     {
       mentee = true;
     }
+
+    if(this.props.type === "Admin")
+    {
+      admin = true;
+    }
     
-    this.checkMentorOrMentee(mentor, mentee);
+    this.checkMentorOrMentee(mentor, mentee, admin);
   }
 
   changeEnableShowMore = () => {
@@ -131,8 +144,7 @@ cancelShowAddMembersFunction = () =>{
       </Modal>
         <div className={classes.Member}>
           {this.props.type} ({this.state.people.length})
-
-          <div className = {classes.addMore} onClick={this.enableShowAddMembersFunction}> Add</div>
+          <div className = {this.props.adminStatus?classes.addMore:classes.hiddenEnabled} onClick={this.enableShowAddMembersFunction}> Add</div>
           <div onClick={this.changeEnableShowMore} 
           className ={!this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.pHide}>Hide</div>
         </div>

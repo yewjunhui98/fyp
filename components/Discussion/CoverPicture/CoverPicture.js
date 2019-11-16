@@ -34,12 +34,12 @@ class discussion extends Component{
                     <div className={classes.coverpic} id="overall">
                         <div className={classes.image}>
                             <img src={cameraLogo} alt="camera" onClick={changeVisible}/>
-                            <a href="/" id="link">
+                            <a href="#" id="link">
                                <p id="add">Edit cover picture</p>
                             </a>
                         </div>
                     </div>
-                <a href="/">
+                <a href="#">
                     <img id="default" src={defaultpic} alt="defaultpicture"/>
                 </a>
             </div>

@@ -33,11 +33,11 @@ const sideDrawer = (props) =>{
                     </nav>
                     
                     <br/>
-                    <b>Portals</b> <br/><br/>
+                    {/*<b>Portals</b> <br/><br/>
                     Portals..
                     <br/><br/>
                     <b>Report a Problem</b> <br/><br/>
-                    Report
+                    Report*/}
                     
                 </footer>            
                 

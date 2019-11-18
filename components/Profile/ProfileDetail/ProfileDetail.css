@@ -1,7 +1,28 @@
 .header {
     border: 1px solid grey;
-    padding: 0;
     margin: 0px 10px 10px;
     font-family: 'Times New Roman', Times, serif;
 }
 
+.header h2{
+    margin: 0;
+    padding: 15px;
+}
+
+.header p{
+    margin: 0;
+    padding: 15px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header hr{
+    margin: 0;
+    padding: 0px;
+}
+
+.experties{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}

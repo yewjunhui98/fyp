@@ -53,7 +53,8 @@ class DiscussionPage extends Component {
     }
     PinorUnpin=()=>{
         //Pin
-        if(this.state.id>4)
+        console.log(this.state.id)
+        if(this.state.id>4 && this.state.id<1000)
         {
             if(this.state.pinnedpost.length===5)
             {
@@ -61,15 +62,84 @@ class DiscussionPage extends Component {
                 return;
             }
             var pinned = this.state.post.splice(this.state.id, 1);
-            this.setState({pinnedpost: [...this.state.pinnedpost, pinned[0]]})
+            this.setState({pinnedpost: [...this.state.pinnedpost, pinned]})
+            this.state.pinnedpost.reverse();
+        }
+        if(this.state.id >= 1000)
+        {
+            if(this.state.pinnedpost.length===5)
+            {
+                alert("Only 5 post may be pinned at a time");
+                return;
+            }
+            if(this.state.id === 1210)
+            {
+                this.setState({name: "sir",
+                date: date2.toLocaleDateString("en-GB", options),
+                liked: false,
+                likes: 0,
+                heartIcon: notLikedIcon,
+                comments: [],
+                noofcomments: 0})
+                pinned = "Don't use any functions on hardcoded post";
+                document.getElementById("1210").innerHTML = "";
+            }
+            if(this.state.id === 1000)
+            {
+                this.setState({name: "Mr",
+                date: date1.toLocaleDateString("en-GB", options),
+                liked: true,
+                likes: 1,
+                heartIcon: LikedIcon,
+                comments: [],
+                noofcomments: 0})
+                pinned =  "bye";
+                document.getElementById("1000").innerHTML = "";
+
+            }
+            this.setState({pinnedpost: [...this.state.pinnedpost, pinned]})
             this.state.pinnedpost.reverse();
         }
         //Unpin
         if(this.state.id<=4)
         {
-            var unpinned = this.state.pinnedpost.splice(this.state.id, 1);
-            this.setState({post: [...this.state.post, unpinned[0]]})
-            this.state.post.reverse();
+            var unpinned = this.state.pinnedpost.splice(this.state.id, 1)
+            if(unpinned === "bye")
+            {
+                return <Discussion name={"Mr"}
+                date={date1.toLocaleDateString("en-GB", options)}
+                post={"bye"}
+                liked={true}
+                likes={1}
+                comments={[]}
+                noofcomments={0}
+                heartIcon={LikedIcon}
+                id={1000}
+                pinned={this.pinnedCallback}
+                deleted={this.deletedCallback}
+                edit={this.editCallback}
+                editid={this.editCallback} />
+            }
+            if(unpinned === "Don't use any functions on hardcoded post")
+            {
+                return <Discussion name={"sir"}
+                date={date2.toLocaleDateString("en-GB", options)}
+                post={"Don't use any functions on hardcoded post"}
+                liked={false}
+                likes={0}
+                comments={[]}
+                noofcomments={0}
+                heartIcon={this.state.heartIcon}
+                id={1210}
+                pinned={this.pinnedCallback}
+                deleted={this.deletedCallback} 
+                edit={this.editCallback}
+                editid={this.editCallback}/>
+            }
+            else{
+                this.setState({post: [...this.state.post, unpinned[0]]})
+                this.state.post.reverse();
+            }
         }
     }
     //double callback id and edit

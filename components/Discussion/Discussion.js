@@ -64,7 +64,6 @@ class discussion extends Component{
         }, ()=>this.props.pinned(this.state.id))
     }
     editCallback=(edit)=>{
-        console.log(edit)
         this.setState({
             edit: edit
         }, ()=>this.props.edit(this.state.edit, this.state.id))

@@ -93,12 +93,10 @@ class ETC extends Component
         })
     }
     editCallback=(edit)=>{
-        console.log(edit)
         this.setState({edit: edit},()=>this.someFn())
     }
     someFn=()=>{
         this.props.edit(this.state.edit)
-        console.log(this.state.edit)
     }
     Delete = () =>{
         this.props.deleted(this.state.id)

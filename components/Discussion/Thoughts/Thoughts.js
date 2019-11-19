@@ -15,19 +15,14 @@ class thoughts extends Component{
         showThoughtsDrawer: false,
         name: "James",
         date: new Date().toLocaleDateString("en-GB", options),
-        post: null, 
-        liked: false, 
-        likes: 0, 
-        comments: [], 
-        noofcomments: 0
-
+        post: null
     }
     myCallback = (post) =>{
         this.setState({post: post}, ()=>{this.someFn()});
     }
 
     someFn = () =>{
-        this.props.name(this.state.name, this.state.date, this.state.post, this.state.liked, this.state.likes, this.state.comments, this.state.noofcomments);
+        this.props.name(this.state.name, this.state.date, this.state.post);
     }
 
     thoughtsDrawerClosedHandler = () => {

@@ -12,32 +12,49 @@ import ETC from '../Discussion/ETC/ETC';
 
 class discussion extends Component{
     state = {
-        name: "James",
+        name: this.props.name,
         showCommentsDrawer: false,
         likes: this.props.likes,
         noofcomments: this.props.noofcomments,
         heartIcon: this.props.heartIcon,
-        comments: [],
+        writtenname: this.props.writtenname,
+        comments: this.props.comments,
+        post: this.props.post,
         pin: false,
         deleted: false,
         id: this.props.id,
-        edit: null
+        edit: this.props.edit
     }
-
     handleLikeChange = () =>{
         if(this.state.heartIcon === LikedIcon)
         {
             this.setState({heartIcon: notLikedIcon});
             if(this.state.likes>0)
-                this.setState({likes: this.state.likes-1});
+                this.setState({likes: this.state.likes-1}, ()=>this.sendLikes());
         }
         else
         {
             this.setState({heartIcon: LikedIcon});
-            this.setState({likes: this.state.likes+1});
+            this.setState({likes: this.state.likes+1}, ()=>this.sendLikes());
         }
     }
+    sendLikes=()=>
+    {
+        this.props.changeLikes(this.state.id, this.state.likes, this.state.heartIcon);
+    }
 
+    myCallback = (writtenname, comments, noofcomments) =>{
+        this.setState({
+            writtenname: writtenname,
+            comments: comments,
+            noofcomments: noofcomments
+        }, ()=>this.sendComments())
+    }
+
+    sendComments=()=>
+    {
+        this.props.changeComments(this.state.id, this.state.writtenname, this.state.comments, this.state.noofcomments);
+    }
     commentsDrawerClosedHandler = () => {
         this.setState({showCommentsDrawer: false});
     }
@@ -47,33 +64,39 @@ class discussion extends Component{
              return {showCommentsDrawer: !prevstate.showCommentsDrawer}
         });
     }
-    myCallback = (comments, noofcomments) =>{
-        this.setState({
-            comments: comments,
-            noofcomments: noofcomments
-        })
-    }
+
     deleteCallback=(id)=>{
         this.setState({
             id: id
         }, ()=>this.props.deleted(this.state.id))
     }
+
     pinnedCallback=(id)=>{
         this.setState({
             id: id
         }, ()=>this.props.pinned(this.state.id))
     }
+
     editCallback=(edit)=>{
         this.setState({
             edit: edit
-        }, ()=>this.props.edit(this.state.edit, this.state.id))
+        },()=>this.sendEdit())
     }
+
+    sendEdit=()=>{
+        if(this.state.edit!==null)
+        {
+            this.setState({post: this.state.edit})
+            this.props.edit(this.state.edit, this.state.id)
+        }
+    }
+
     render(){
         return(
-            <div id={this.state.id}>
-                <div className={classes.header} onClick={this.changePin}>
+            <div id={this.props.id}>
+                <div className={classes.header}>
                     <img src={profileIcon} alt="profileicon" className={classes.profile}/>
-                    <ETC id={this.state.id} pin={this.pinnedCallback} deleted={this.deleteCallback} post={this.props.post} edit={this.editCallback}/>
+                    <ETC id={this.state.id} pin={this.pinnedCallback} deleted={this.deleteCallback} post={this.state.post} edit={this.editCallback}/>
                     <div className={classes.profileheader}>
                     <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
                             <strong>{this.props.name}</strong>
@@ -84,12 +107,12 @@ class discussion extends Component{
                         </div>
                     </div>
                     <div className={classes.post}>
-                        {this.props.post}
+                        {this.state.post}
                     </div>
                     <div className={classes.row}>
                         <div className={classes.column}>
-                            <div className={classes.heart}>
-                                <img src={this.state.heartIcon} id="changeHeart" alt="hearticon" onClick={this.handleLikeChange}/>
+                            <div className={classes.heart} onClick={this.handleLikeChange}>
+                                <img src={this.state.heartIcon} id="changeHeart" alt="hearticon"/>
                                 {this.state.likes} likes
                             </div>
                         </div>
@@ -98,8 +121,9 @@ class discussion extends Component{
                                 <CommentBar commentsDrawerToggleClicked={this.commentsDrawerToggleHandler} 
                                 noofcomments={this.state.noofcomments}/>
                                 <CommentsDrawer open={this.state.showCommentsDrawer} 
-                                closed={this.commentsDrawerClosedHandler} 
-                                comments={this.myCallback} 
+                                closed={this.commentsDrawerClosedHandler}
+                                comments={this.state.comments}
+                                sendComments={this.myCallback} 
                                 name={this.state.name}/>
                             </div>
                         </div>
@@ -112,7 +136,8 @@ class discussion extends Component{
                     <WriteCommentBar writeCommentDrawerToggleClicked={this.commentsDrawerToggleHandler}/>
                     <CommentsDrawer open={this.state.showCommentsDrawer} 
                                 closed={this.commentsDrawerClosedHandler} 
-                                comments={this.myCallback} 
+                                comments={this.state.comments}
+                                sendComments={this.myCallback} 
                                 name={this.state.name}/>
                 </div>
             </div>

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import classes from './CoverPicture.css';
 import defaultpic from '../../../assets/images/picture.png';
 import cameraLogo from '../../../assets/images/camera.png';
-//import example from '../../../assets/images/example.jpg';
 
 class discussion extends Component{
     render(){
@@ -10,7 +9,7 @@ class discussion extends Component{
         function changeVisible(){
             if(clicked===false)
             {
-                document.getElementById("overall").style.marginLeft = "61%";
+                document.getElementById("overall").style.marginLeft = "58%";
                 document.getElementById("overall").style.width = "auto";
                 document.getElementById("overall").style.height = "auto";
                 document.getElementById("add").style.color = "rgba(0,0,255,1)";
@@ -20,9 +19,9 @@ class discussion extends Component{
             }
             else
             {
-                document.getElementById("overall").style.marginLeft = "85%";
-                document.getElementById("overall").style.width = "6%";
-                document.getElementById("overall").style.height = "25px";
+                document.getElementById("overall").style.marginLeft = "80%";
+                document.getElementById("overall").style.width = "10%";
+                document.getElementById("overall").style.height = "30px";
                 document.getElementById("add").style.color = "rgba(0,0,255,0)";
                 document.getElementById("link").style.pointerEvents = "none";
                 document.getElementById("overall").style.transition = "none";

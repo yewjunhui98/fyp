@@ -136,17 +136,20 @@ class DiscussionPage extends Component {
     }
     //function to delete post
     deletePosts=()=>{
-        //unpinned post
-        if(this.state.id>4 && this.state.id<999)
+        if(this.state.id>4 && this.state.id<1000)
         {
-            const change = this.state.post.slice(0, this.state.id).concat(this.state.post.slice(this.state.id+1, this.state.post.length));
-            this.setState({post: change})
-        }
-        //pinned post
-        else
-        {
-            const change = this.state.pinnedpost.slice(0, this.state.id).concat(this.state.pinnedpost.slice(this.state.id+1, this.state.pinnedpost.length));
-            this.setState({pinnedpost: change})
+            var change = this.state.self;
+            for(let i=0;i<change.length;i++)
+            {
+                if(change[i].id === this.state.id)
+                {
+                    let temp = change[i];
+                    change = change.filter(function(unpinned){
+                        return unpinned !== temp
+                    })
+                }
+            }
+            this.setState({self: change});
         }
     }
     //callback function to pin post
@@ -325,7 +328,6 @@ class DiscussionPage extends Component {
                 <Tips/>
                 {pinnedPosts}
                 {thoughtPosts}
-                {console.log(thoughtPosts)}
                 {/*post example, remove bottom lines*/}
                 {otherPeople}
             </Aux>

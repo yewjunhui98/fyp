@@ -68,7 +68,6 @@ class ETC extends Component
         clicked = false;
     }
     changePinDocument=()=>{
-        console.log(this.state.id)
         if(this.props.id<5)
         {
             for(let i=0;i<5;i++)

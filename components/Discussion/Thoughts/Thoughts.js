@@ -35,7 +35,7 @@ class thoughts extends Component{
     }
     render(){
         return(
-            <div className={classes.header}>    
+            <div className={classes.header}>   
                 <img src={personIcon} alt="personicon"/>
                     <div>
                         <ThoughtsBar thoughtsDrawerToggleClicked={this.thoughtsDrawerToggleHandler}/>

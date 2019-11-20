@@ -26,7 +26,7 @@ class comments extends Component{
             <div className={classes.header}>
                 <img src={this.props.image} alt="clear"/>
                 <div className={classes.comments}>
-                <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
+                <Link to={{pathname: `/profilePage`, search : `?name=${commentname}`}}>
                     <b>{commentname}</b>
                         </Link>
                         <br/>

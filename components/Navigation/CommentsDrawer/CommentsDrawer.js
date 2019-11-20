@@ -5,6 +5,7 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Comments from '../../Discussion/Comments/Comments';
 import ProfileIcon from '../../../assets/images/person-icon.png';
 import SubmitIcon from '../../../assets/images/submit.png';
+import BackIcon from '../../../assets/images/back.png';
 
 class CommentsDrawer extends Component{
     state ={
@@ -45,6 +46,8 @@ class CommentsDrawer extends Component{
         <Aux>
             <Backdrop show={this.props.open} clicked={this.props.closed}/>
             <div className={attachedClasses.join(' ')}>
+            <img src={BackIcon} alt="backicon" onClick={this.props.closed}/>
+            <hr/>
                 {mappedComments}
                 <input type="text" id="writecomment"  ref="input" placeholder="Write a comment..."  onChange={this.handleChange}/>
                 <div className={classes.submit}>

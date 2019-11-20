@@ -31,8 +31,9 @@ class ETC extends Component
         {
             for(let i=0;i<size;i++)
             {
-                x[i].style.color = "black";
+                x[i].style.color = "rgba(95, 95, 95, 1)";
                 x[i].style.borderColor = "black";
+                x[i].style.backgroundColor = "rgba(255, 255, 255, 1)";
                 x[i].style.height = "auto";
                 x[i].style.width = "auto";
                 x[i].style.pointerEvents = "auto";
@@ -46,6 +47,7 @@ class ETC extends Component
             {
                 x[i].style.color = "rgba(0,0,0,0)";
                 x[i].style.borderColor = "rgba(0,0,0,0)";
+                x[i].style.backgroundColor = "rgba(255, 255, 255, 0)";
                 x[i].style.height = "auto";
                 x[i].style.width = "auto";
                 x[i].style.pointerEvents = "none";

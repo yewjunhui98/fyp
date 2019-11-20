@@ -35,20 +35,22 @@
 }
 
 input{
-    margin-top: 40%;
+    margin-top: 56%;
     margin-left: 3%;
     width: 80%;
+    height: 5%;
     clear: none;
     border: solid 1px black;
+    border-radius: 5px;
 }
 
 .submit{
     float: right;
     margin-right: 3%;
-    margin-top: 39%;
+    margin-top: 54%;
 }
 
 .submit img{
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
 }

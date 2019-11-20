@@ -98,9 +98,11 @@ class discussion extends Component{
                     <img src={profileIcon} alt="profileicon" className={classes.profile}/>
                     <ETC id={this.state.id} pin={this.pinnedCallback} deleted={this.deleteCallback} post={this.state.post} edit={this.editCallback}/>
                     <div className={classes.profileheader}>
-                    <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
-                            <strong>{this.props.name}</strong>
+                        <div className={classes.name}>
+                            <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
+                                <p><strong>{this.props.name}</strong></p>
                             </Link>
+                        </div>
                         <br/>
                         <div className={classes.date}>
                             {this.props.date}

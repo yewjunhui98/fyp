@@ -5,31 +5,33 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Comments from '../../Discussion/Comments/Comments';
 import ProfileIcon from '../../../assets/images/person-icon.png';
 import SubmitIcon from '../../../assets/images/submit.png';
+import BackIcon from '../../../assets/images/back.png';
 
 class CommentsDrawer extends Component{
     state ={
+        name: this.props.name,
         writtencomment: null,
-        comments: [],
+        writtenname: this.props.writtenname,
+        comments: this.props.comments,
         noofcomments: 0
     }
     
     createComment = () =>{
         if(this.state.comments.length===0){
-            this.setState({comments: [this.state.writtencomment], noofcomments: this.state.comments.length+1}, () => {this.someFn()})
+            this.setState({writtenname: "James",comments: [this.state.writtencomment], noofcomments: this.state.comments.length+1}, () => this.someFn())
         }
         else{
-            this.setState({comments: [...this.state.comments, this.state.writtencomment], noofcomments: this.state.comments.length+1}, ()=>{this.someFn()})
+            this.setState({writtenname: "James",comments: [...this.state.comments, this.state.writtencomment], noofcomments: this.state.comments.length+1}, ()=>this.someFn())
         }
         this.refs.input.value = "";
     }
 
     someFn = () =>{
-        this.props.comments(this.state.comments, this.state.noofcomments);
+        this.props.sendComments(this.state.writtenname, this.state.comments, this.state.noofcomments);
     }
     handleChange=(event)=>{
         this.setState({writtencomment: event.target.value})
     }
-
     render(){
     let attachedClasses = [classes.CommentsDrawer, classes.Close];
     if(this.props.open)
@@ -38,12 +40,14 @@ class CommentsDrawer extends Component{
     };
 
     const mappedComments = this.state.comments.map((value, i)=>{
-        return <Comments image={ProfileIcon} name={this.props.name} comments={value} key={i}/>
+        return <Comments image={ProfileIcon} name={this.state.name} writtenname={this.state.writtenname} comments={value} key={i}/>
     })        
     return(
         <Aux>
             <Backdrop show={this.props.open} clicked={this.props.closed}/>
             <div className={attachedClasses.join(' ')}>
+            <img src={BackIcon} alt="backicon" onClick={this.props.closed}/>
+            <hr/>
                 {mappedComments}
                 <input type="text" id="writecomment"  ref="input" placeholder="Write a comment..."  onChange={this.handleChange}/>
                 <div className={classes.submit}>

@@ -1,8 +1,9 @@
 .input h4{
     display:block;
-    margin: 3% 0% 2% 15%; 
+    margin: 3% 0% 2% 11.5%; 
+    padding: 5px;
     border: 1px solid black;
-    width: 80%;
+    width: 82%;
     border-radius: 5px;
     color: grey;
 }

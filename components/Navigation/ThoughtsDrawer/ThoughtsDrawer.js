@@ -9,7 +9,7 @@ import PhotoIcon from '../../../assets/images/photo.png';
 
 class ThoughtsDrawer extends Component{    
     state={
-        post: ""
+        post: null
     }
 
     postThoughts = () =>{

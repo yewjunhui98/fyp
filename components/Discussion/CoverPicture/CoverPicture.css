@@ -10,20 +10,20 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    height: 125px;
-    width: 100%;
+    height: 175px;
+    width: 70%;
 }
 
 .coverpic{
-    height : 25px;
-    width: 6%;
+    height : 30px;
+    width: 10%;
     position: absolute;
-    margin-left: 85%;
+    margin-left: 80%;
     margin-right: 5%;
     margin-top: 2%;
     overflow: auto;
     padding: 0 0 0 5px;
-    transition: all .5s linear;
+    transition: all .2s linear;
     background : rgba(255, 255, 255, 0.5);
 }
 
@@ -34,8 +34,8 @@
 
 .image img{
     float: right;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 
 .image a{

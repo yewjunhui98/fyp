@@ -16,12 +16,12 @@ class EditDrawer extends Component{
     handleChange=(event)=>{
         this.setState({edit: event.target.value})
     }
-    editPost = ()=>{
+    editPost=()=>{
+        //on initialize
         if(document.getElementById("edittext"+this.props.id).value === "")
     	    return;
         else{
             this.setState({edit: document.getElementById("edittext"+this.props.id).value}, ()=>this.someFn())
-            console.log(this.state.edit)
         }
         let x = document.getElementById("list" + this.props.id).childNodes
         for(let i=0;i<3;i++)
@@ -50,7 +50,7 @@ class EditDrawer extends Component{
                     <div className={classes.back}>   
                         <img src={BackIcon} alt="backicon" onClick={this.props.closed}/>
                     </div>
-                    <textarea id={"edittext"+this.props.id} placeholder="Share your thoughts here..." defaultValue={this.props.post} onChange={this.handleChange}/>
+                    <textarea id={"edittext"+this.props.id} placeholder="Share your thoughts here..." defaultValue={this.state.post} onChange={this.handleChange}/>
                     <div onClick={this.props.closed}>
                         <h1 onClick={this.editPost}>Post</h1>
                     </div>

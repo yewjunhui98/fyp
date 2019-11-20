@@ -18,14 +18,16 @@ class Member extends Component {
                 </div>
                 <div className={classes.link}>
                     
-                    <div>
+                    <div className={classes.image}>
                         <img src={icon} alt="ProfileIcon" height="30px" />
                     </div>
-                    <div>
+                    <div className={classes.name}>
                         <Link to={{pathname: `/profilePage`, search : `?name=${this.props.name}`}}>
-                            {this.props.name} 
+                            <p>{this.props.name} </p>
                         </Link>
-                        {displayposition}
+                        <div className={classes.position}>
+                            {displayposition}
+                        </div>
                     </div>
                 </div>
             </div>

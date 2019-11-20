@@ -148,6 +148,7 @@ cancelShowAddMembersFunction = () =>{
           <div onClick={this.changeEnableShowMore} 
           className ={!this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.pHide}>Hide</div>
         </div>
+        <hr/>
         <div className={classes.list}>
             {mappedMembers}
             <div className={this.state.showMoreEnabled || this.state.people.length <= 3 ? classes.hiddenEnabled:classes.showMoreButton}

@@ -1,13 +1,17 @@
 .Member {
-    border: 1px solid grey;
-    margin: -1px -1px 5px 0px;
-    padding: 5px;
+    margin: 9px 5px 0px 0px;
+    padding-left: 5px;
+}
+
+hr{
+    margin-bottom: 0;
 }
 
 .header {
     border: 1px solid grey;
     font-weight: bold;
     margin: 0px 10px;
+    padding-bottom: 5px;
 }
 
 .list {
@@ -25,7 +29,8 @@
     text-align: center;
     border-top: 1px solid grey;
     color: #084C9E;
-    padding: 6px 0px;
+    padding: 10px 0px;
+    padding-bottom: 0;
     font-size: 14px;
 }
 .showMoreButton:hover{

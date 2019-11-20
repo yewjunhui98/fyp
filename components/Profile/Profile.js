@@ -10,7 +10,7 @@ class profile extends Component {
                 <img src={profilePicture} alt="placeholder"></img>
             </div>
             <h2>{this.props.name}</h2>
-            <h4>some type</h4>
+            <h4>Software Engineer</h4>
           </div> 
         );
     }

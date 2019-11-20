@@ -16,20 +16,20 @@ class profiledetail extends Component {
                 <div className={classes.header}>
                     <h2>About Me</h2>
                     <hr/>
-                    <p>In west Philadelphia born and raised. fuck you :)</p>
-                    <br/>
+                    <p>In west Philadelphia born and raised.</p>
                 </div>
                 <div className={classes.header}>
                     <h2>Industry and Expertise</h2>
                     <hr/>
-                    {mappedExpertise}
-                    <br/><br/>
+                    <div className={classes.experties}>
+                        {mappedExpertise}
+                    </div>
+                    <br/>
                 </div>
                 <div className={classes.header}>
                     <h2>Work Experience</h2>
                     <hr/>
                     <p>{this.state.experience}</p>
-                    <br/>
                 </div>
             </div>
 

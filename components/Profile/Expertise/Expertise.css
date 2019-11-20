@@ -6,4 +6,7 @@
     text-align: center;
     width: auto;
     float: left;
+    padding: 2px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

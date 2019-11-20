@@ -10,9 +10,9 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 const navigationItems = (props) => (
     <ul className={classes.NavigationItems}>
        {/* <NavigationItem link="#" active>Current Page</NavigationItem> */}
-       <NavigationItem link="#"><img src={chatIcon} className={classes.ChatIcon} alt="chat"/></NavigationItem>
-       <NavigationItem link="#"><img src={bellIcon} className={classes.BellIcon} alt="bell"/></NavigationItem>
-       <NavigationItem link="#"><img src={personIcon} className={classes.PersonIcon} alt="person"/></NavigationItem>
+       <NavigationItem link="/"><img src={chatIcon} className={classes.ChatIcon} alt="chat"/></NavigationItem>
+       <NavigationItem link="/"><img src={bellIcon} className={classes.BellIcon} alt="bell"/></NavigationItem>
+       <NavigationItem link="/profilePage?name=James"><img src={personIcon} className={classes.PersonIcon} alt="person"/></NavigationItem>
        <DrawerToggle clicked={props.drawerToggleClicked} />
     </ul>
 );

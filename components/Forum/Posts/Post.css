@@ -67,12 +67,14 @@
     margin-left: 5px;
     height: 30%;
     padding: 1px;
+    word-wrap: break-word;
 }
 .post{
     margin-top: 2%;
     margin-left: 5%;
     height: 15%;
     padding: 1px;
+    word-wrap: break-word;
 }
 /*
 .tags{

@@ -28,7 +28,7 @@ class ForumPage extends Component {
         noofcomments: 0, 
         id: 999
     }
-    //~~~~~~Search handler~~~~~~
+    //vvv Search handler vvv
     searchClosedHandler = () => {
         this.setState({showSearch:false});
     }
@@ -37,9 +37,9 @@ class ForumPage extends Component {
             return {showSearch: !prevState.showSearch};
         });
     }
-    //@@@@@@Search Handler@@@@@@
+    //^^^ Search Handler ^^^
 
-    //~~~~~~Add Post handler~~~~~~
+    //vvv Add Post handler vvv
     addPostClosedHandler = () => {
         this.setState({showAddPost:false});
     }
@@ -48,8 +48,7 @@ class ForumPage extends Component {
             return {showAddPost: !prevState.showAddPost};
         });
     }
-    //@@@@@@Add Post Handler@@@@@@
-
+    //^^^ Add Post Handler ^^^
     myCallback = (name, date, title, post, liked, likes, comments, noofcomments) =>{
         this.setState({name: name, date: date, title: [...this.state.title, title], post: [...this.state.post, post], liked: liked, likes: likes, comments: comments, nofcomments: noofcomments})
     }
@@ -84,8 +83,8 @@ class ForumPage extends Component {
                    
                 <h2>&nbsp;Forum Posts</h2>
                 {mappedPosts}
-                <Post name={"user1"} date={this.state.date} title={"I have some questions on Peer-to-Peer Businesses"}post={["I believe peer-to-peer business is getting popular in Malaysia..."]} tags={["tag1"]} liked={false} likes={0} comments={[]} noofcomments={0} id={121}/>
-                <Post name={"user2"} date={this.state.date} title={"What are the current popular business models to follow?"}post={["I have always been interested in the business but I have not much knowledge. Can some experts here shed some light on the topic?"]} tags={["anothertag"]} liked={false} likes={0} comments={[]} noofcomments={0} id={321}/>
+                <Post name={"user1"} date={this.state.date} title={"I have some questions on Peer-to-Peer Businesses"}post={["I believe peer-to-peer business is getting popular in Malaysia..."]} tags={["tag1"]} liked={false} likes={3} comments={[]} noofcomments={0} id={121}/>
+                <Post name={"user2"} date={this.state.date} title={"What are the current popular business models to follow?"}post={["I have always been interested in the business but I have not much knowledge. Can some experts here shed some light on the topic?"]} tags={["anothertag"]} liked={false} likes={4} comments={[]} noofcomments={0} id={321}/>
                 <br/>
             </Aux>
         );

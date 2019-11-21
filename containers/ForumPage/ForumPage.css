@@ -21,10 +21,10 @@
     color: white;
     padding: 2px;
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    line-height: 25px;
+    line-height: 100%;
 }

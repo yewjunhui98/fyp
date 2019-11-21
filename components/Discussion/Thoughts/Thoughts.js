@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import classes from './Thoughts.css';
 import personIcon from '../../../assets/images/person-icon.png';
-import ThoughtsDrawer from '../../Navigation/ThoughtsDrawer/ThoughtsDrawer';
-import ThoughtsBar from '../../Navigation/ThoughtsBar/ThoughtsBar';
+import ThoughtsDrawer from '../../DiscussionDrawer/ThoughtsDrawer/ThoughtsDrawer';
+import ThoughtsBar from '../../DiscussionDrawer/ThoughtsBar/ThoughtsBar';
 
 const options = {
     year: "numeric",

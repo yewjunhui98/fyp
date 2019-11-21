@@ -5,9 +5,9 @@ import notLikedIcon from '../../assets/images/unliked.png';
 import LikedIcon from '../../assets/images/liked.png';
 import shareIcon from '../../assets/images/share.png';
 import {Link} from 'react-router-dom';
-import CommentsDrawer from '../Navigation/CommentsDrawer/CommentsDrawer';
-import CommentBar from '../Navigation/CommentBar/CommentBar';
-import WriteCommentBar from '../Navigation/WriteCommentBar/WriteCommentBar';
+import CommentsDrawer from '../DiscussionDrawer/CommentsDrawer/CommentsDrawer';
+import CommentBar from '../DiscussionDrawer/CommentBar/CommentBar';
+import WriteCommentBar from '../DiscussionDrawer/WriteCommentBar/WriteCommentBar';
 import ETC from '../Discussion/ETC/ETC';
 
 class discussion extends Component{

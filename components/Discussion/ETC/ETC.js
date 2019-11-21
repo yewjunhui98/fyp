@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import classes from './ETC.css';
 import etcIcon from '../../../assets/images/etc.png';
-import EditBar from '../../Navigation/EditBar/EditBar';
-import EditDrawer from '../../Navigation/EditDrawer/EditDrawer';
+import EditBar from '../../DiscussionDrawer/EditBar/EditBar';
+import EditDrawer from '../../DiscussionDrawer/EditDrawer/EditDrawer';
 
 let clicked = false;
 

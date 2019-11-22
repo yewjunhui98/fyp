@@ -30,14 +30,12 @@ const sideDrawer = (props) =>{
                         <Link to="/discussion" onClick={props.closed} className={classes.slink}><span>Discussion</span></Link>
                         <Link to="/forum" onClick={props.closed} className={classes.slink}><span>Forum</span></Link>
                         <Link to="/members" onClick={props.closed} className={classes.slink}><span>Members</span></Link>
+                        <br/>
+                        <b>Portals</b> <br/><br/>
+                        <Link to="/discussion" onClick={props.closed} className={classes.slink}><span>Portal</span></Link>
                     </nav>
                     
-                    <br/>
-                    {/*<b>Portals</b> <br/><br/>
-                    Portals..
-                    <br/><br/>
-                    <b>Report a Problem</b> <br/><br/>
-                    Report*/}
+                    
                     
                 </footer>            
                 

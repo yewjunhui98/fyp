@@ -36,6 +36,7 @@ class ForumPage extends Component {
         this.setState((prevState) => {
             return {showSearch: !prevState.showSearch};
         });
+        this.childUpdate.updateState();
     }
     //^^^ Search Handler ^^^
 
@@ -74,7 +75,9 @@ class ForumPage extends Component {
         return(
             <Aux>                
                 <div onClick={this.searchToggleHandler} className={classes.btnSearch}>Search</div>
-                <SearchDrawer open={this.state.showSearch} closed={this.searchClosedHandler}/> 
+                <SearchDrawer open={this.state.showSearch} closed={this.searchClosedHandler} 
+                ref={(ip) => {this.childUpdate = ip}}
+                title={this.state.title}/> 
 
                 <div onClick={this.addPostToggleHandler} className={classes.btnAsk}>+</div>
                 <AddPostDrawer openAdd={this.state.showAddPost} closedAdd={this.addPostClosedHandler}

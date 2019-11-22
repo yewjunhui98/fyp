@@ -63,6 +63,7 @@ class List extends React.Component {
                 <hr/>
                 <span>Search Results</span>
                 <hr/>
+                <br/>
                 <ul>
                     {this.state.filtered.map(item => (
                         <li key={item} className={classes.searchList}>
